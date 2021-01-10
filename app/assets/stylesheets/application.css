@@ -15,9 +15,6 @@
  *= require_self
  */
 
-/*.footer {*/
-/*    position: fixed;*/
-/*    left: 0;*/
-/*    bottom: 0;*/
-/*    width: 100%;*/
-/*}*/
+body {
+    background: #f7fdff;
+}
