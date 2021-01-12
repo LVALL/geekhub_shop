@@ -4,4 +4,8 @@ Rails.application.routes.draw do
   resources :categories, only: :show do
     resources :products, only: %i[index show]
   end
+
+  resources :products, only: %i[index show] do
+    get :search, on: :collection
+  end
 end
