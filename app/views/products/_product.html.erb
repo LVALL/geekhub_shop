@@ -4,7 +4,7 @@
       <%= image_tag(product.image, class: "card-img-top") %>
       <div class="card-body">
         <h4 class="card-title">
-          <a href="#"><%= product.name %></a>
+          <%= link_to product.name, product, class: "text-decoration-none" %>
         </h4>
         <h5>$<%= product.price %></h5>
         <p class="card-text"><%= product.description %></p>

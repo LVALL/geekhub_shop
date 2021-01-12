@@ -1,11 +1,14 @@
 class ProductsController < ApplicationController
   def index
     @products = Product.all.order(created_at: :desc).paginate(page: params[:page], per_page: 6)
-    render json: @products.map(&:name)
   end
 
   def show
     @product = Product.find(params[:id])
+  end
+
+  def complete
+    render json: Product.all.map(&:name)
   end
 
   def search
