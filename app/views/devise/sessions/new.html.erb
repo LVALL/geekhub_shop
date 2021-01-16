@@ -4,9 +4,7 @@
       <div class="card card-signin my-5">
         <div class="card-body">
           <h5 class="card-title text-center">Sign In</h5>
-          <form class="form-signin">
             <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-
               <div class="form-label-group">
                 <label for="inputEmail">Email address</label>
                 <%= f.email_field :email, autofocus: true, required: true, autocomplete: "email", type: "email",
@@ -28,7 +26,6 @@
               <%= f.submit "Sign in", class: "btn btn-lg btn-info btn-block text-uppercase", type: "submit" %>
               <hr class="my-4">
             <% end %>
-          </form>
         </div>
       </div>
     </div>
