@@ -12,6 +12,10 @@ ActiveAdmin.register User do
     actions
   end
 
+  show do
+    user
+  end
+
   filter :email
   filter :superadmin
   filter :current_sign_in_at
