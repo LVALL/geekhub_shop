@@ -72,4 +72,4 @@ rather than by a computer expert or technician. Unlike large, costly minicompute
 people at the same time is not used with personal computers.',
                image: 'https://186581-550669-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2020/01/Corsair-One-i164-Compact-Gaming-PC.jpg',
                price: 567.99, category_id: 3)
-AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+User.create!(email: "admin@admin.com", password: "Password123", password_confirmation: "Password123", superadmin: true)
