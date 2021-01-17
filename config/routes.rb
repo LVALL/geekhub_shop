@@ -13,5 +13,5 @@ Rails.application.routes.draw do
     get :search, on: :collection
   end
 
-  resources :carts, only: [:show]
+  resource :cart, only: [:show], on: :collection
 end
