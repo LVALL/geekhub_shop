@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   end
 
   resources :products, only: %i[index show] do
+    resources :order_items, only: %i[create update destroy]
     get :search, on: :collection
   end
+
+  resources :carts, only: [:show]
 end
