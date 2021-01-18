@@ -51,11 +51,14 @@
       </div>
     </div>
     <div class="row mt-4 d-flex align-items-center mb-5">
-      <div class="col-sm-6 mb-3 mb-m-1 order-md-1 text-md-left">
+      <div class="col-lg-9 col-sm-7 mb-3 mb-m-1 order-md-1 text-md-left">
           <i class="fas fa-arrow-left mr-2 text-info"><%= link_to " Continue Shopping", root_path, class: "text-info text-decoration-none" %></i>
       </div>
-      <div class="col-sm-6 order-md-2 text-right">
-        <a href="#" class="btn btn-info mb-4 btn-lg pl-5 pr-5">Checkout</a>
+      <div class="col-lg-3 col-sm-5 order-md-2">
+        <%= form_with url: cart_path(current_order), class: "search_form form-inline ml-sm-4 ml-lg-3", method: :patch do |f| %>
+          <%= f.hidden_field :total_price, id: "hidden-total-price" %>
+          <%= f.submit "Create order", class: 'btn btn-info mb-4 float-right btn-lg pl-5 pr-5', type: "submit" %>
+        <% end %>
       </div>
     </div>
   </div>

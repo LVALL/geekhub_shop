@@ -6,6 +6,7 @@ document.addEventListener('turbolinks:load', function () {
                 totalPrice += parseFloat($(this).children(".item-price").html()) * parseInt($(this).find(".item-quantity").val())
             });
             $("#total-price").html(`$${totalPrice.toFixed(2)}`);
+            $("#hidden-total-price").val(totalPrice.toFixed(2));
         }
 
         calculatePrice();
