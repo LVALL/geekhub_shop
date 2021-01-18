@@ -54,11 +54,8 @@
       <i class="fas fa-arrow-left mr-2 text-info"><%= link_to " Continue Shopping", root_path, class: "text-info text-decoration-none" %></i>
     </div>
     <div class="col-lg-3 col-sm-5 order-md-2">
-      <%= form_with url: cart_path(current_order), class: "search_form form-inline ml-sm-4 ml-lg-3", method: :patch do |f| %>
-        <%= f.hidden_field :total_price, id: "hidden-total-price" %>
-        <%= f.submit "Create order", class: 'btn btn-info mb-4 float-right btn-lg pl-5 pr-5', type: "submit",
-                     data: { toggle: "modal", target: "#exampleModalCenter" } %>
-      <% end %>
+      <button type="button" id="create-order-button" class="btn btn-info mb-4 float-right btn-lg pl-5 pr-5">Create order</button>
     </div>
   </div>
+  <button type="button" class="show-modal btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"></button>
 </div>

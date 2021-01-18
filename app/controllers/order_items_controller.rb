@@ -1,5 +1,6 @@
 class OrderItemsController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_params, only: %i[update destroy]
 
   def create
     @order_item = current_order.order_items.find_or_create_by(product_id: params[:product_id], user: current_user)
@@ -9,16 +10,19 @@ class OrderItemsController < ApplicationController
   end
 
   def update
-    @order_item = current_order.order_items.find(params[:id])
-    @order_item.update(quantity: params[:quantity].to_i)
     @order_items = current_order.order_items
     redirect_to :cart
   end
 
   def destroy
-    @order_item = current_order.order_items.find(params[:id])
     @order_item.destroy
-    @order_items = current_order.order_items
     redirect_to :cart
+  end
+
+  private
+
+  def set_params
+    @order_item = current_order.order_items.find(params[:id])
+    @order_items = current_order.order_items
   end
 end

@@ -6,7 +6,16 @@ class CartsController < ApplicationController
   end
 
   def update
-    @order = current_user.orders.pending
-    @order.update(total_price: params[:total_price].to_f, status: 'ordered')
+    update_order_items_quantities
+    current_order.update(total_price: params[:total_price].to_f, status: 'ordered')
+  end
+
+  private
+
+  def update_order_items_quantities
+    quantities_array = params[:quantities].to_ary
+    current_order.order_items.each_with_index do |item, index|
+      item.update(quantity: quantities_array[index].to_i)
+    end
   end
 end
