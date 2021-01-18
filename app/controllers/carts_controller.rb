@@ -7,7 +7,6 @@ class CartsController < ApplicationController
 
   def update
     @order = current_user.orders.pending
-    debugger
     @order.update(total_price: params[:total_price].to_f, status: 'ordered')
   end
 end
