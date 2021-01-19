@@ -13,5 +13,7 @@ Rails.application.routes.draw do
     get :search, on: :collection
   end
 
-  resource :cart, only: %i[show update]
+  resource :cart, only: %i[show update] do
+    get :profile, on: :collection
+  end
 end

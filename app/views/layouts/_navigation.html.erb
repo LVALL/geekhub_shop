@@ -21,11 +21,16 @@
             <%= link_to 'Admin Panel',  admin_root_path, class: "nav-link" if current_user.superadmin?%>
           </li>
           <li class="nav-item">
+            <%= link_to(profile_cart_path, class: "nav-link") do %>
+              <i class="fas fa-book"></i>
+            <% end %>
+          </li>
+          <li class="nav-item ml-lg-3">
             <%= link_to(cart_path, class: "nav-link") do %>
               <i class="fas fa-shopping-cart"></i>
             <% end %>
           </li>
-          <li class="nav-item ml-3">
+          <li class="nav-item ml-lg-3">
             <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "nav-link" %>
           </li>
         <% else %>

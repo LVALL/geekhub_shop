@@ -10,6 +10,10 @@ class CartsController < ApplicationController
     current_order.update(total_price: params[:total_price].to_f, status: 'ordered')
   end
 
+  def profile
+    @ordered_orders = current_user.orders.where(status: 'ordered').paginate(page: params[:page], per_page: 6)
+  end
+
   private
 
   def update_order_items_quantities
