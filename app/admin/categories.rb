@@ -1,5 +1,5 @@
 ActiveAdmin.register Category do
-  permit_params :name
+  permit_params :name, :parent_id
 
   index do
     selectable_column
@@ -18,6 +18,7 @@ ActiveAdmin.register Category do
   form do |f|
     f.inputs do
       f.input :name
+      f.input :parent_id
     end
     f.actions
   end
