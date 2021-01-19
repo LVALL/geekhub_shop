@@ -27,7 +27,7 @@
                 <%= f.number_field :min, value: 0, class: "col-auto form-control mr-sm-2 my-1",
                                    placeholder: "min price", id: "inlineFormCustomSelect" %>
 
-                <%= f.number_field :max, value: @category.products.all.map(&:price).max.round,
+                <%= f.number_field :max, value: 1000,
                                    class: "col-auto form-control mr-sm-2 my-1",
                                    placeholder: "max price", id: "inlineFormCustomSelect" %>
               </div>

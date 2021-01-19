@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   def index
     @products = SortProductsService.new(params, Product.all, 6).call
+    @categories = Category.where(parent_id: nil)
   end
 
   def show
