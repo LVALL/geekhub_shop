@@ -14,7 +14,7 @@ class CartsController < ApplicationController
 
   def update_order_items_quantities
     quantities_array = params[:quantities].to_ary
-    current_order.order_items.each_with_index do |item, index|
+    current_order.order_items.each.with_index do |item, index|
       item.update(quantity: quantities_array[index].to_i)
     end
   end
