@@ -1,5 +1,5 @@
 <div class="list-group my-4">
-  <% @categories.each do |category| %>
+  <% Category.where(parent_id: nil).each do |category| %>
     <div class="btn-group dropdown">
       <%= link_to category.name, category, class: "col-lg-7 col-sm-4 btn text-decoration-none text-left", id: category.id %>
       <button type="button" class="col-lg-3 col-sm-1 btn dropdown-toggle dropdown-toggle-split text-left" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
