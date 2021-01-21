@@ -17,10 +17,10 @@
                                      class: "form-control", placeholder: "Password" %>
               </div>
 
-              <div class="custom-control custom-checkbox mb-3">
+              <div class="mb-3 mt-1">
                 <% if devise_mapping.rememberable? %>
-                  <%= f.check_box :remember_me, type: "checkbox", class: "custom-control-input" %>
-                  <label class="custom-control-label" for="customCheck1">Remember me</label>
+                  <%= f.check_box :remember_me, type: "checkbox"%>
+                  <label for="customCheck1">Remember me</label>
                 <% end %>
               </div>
               <%= f.submit "Sign in", class: "btn btn-lg btn-info btn-block text-uppercase", type: "submit" %>
