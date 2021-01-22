@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: cotoval
+  api_key: '185137745246521'
+  api_secret: vPVh6cv8Ya-qCLWi_XKPEIuJp2U
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: cotoval
+  api_key: '185137745246521'
+  api_secret: vPVh6cv8Ya-qCLWi_XKPEIuJp2U
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: cotoval
+  api_key: '185137745246521'
+  api_secret: vPVh6cv8Ya-qCLWi_XKPEIuJp2U
+  enhance_image_tag: true
+  static_file_support: false

@@ -60,3 +60,4 @@ gem 'activeadmin', '~> 2.8'
 gem 'devise'
 
 gem 'carrierwave'
+gem 'cloudinary'
