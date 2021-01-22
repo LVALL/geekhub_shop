@@ -11,7 +11,7 @@ class CartsController < ApplicationController
   end
 
   def profile
-    @ordered_orders = current_user.orders.where(status: 'ordered').order(created_at: :desc).paginate(page: params[:page], per_page: 6)
+    @ordered_orders = current_user.orders.ordered.order(created_at: :desc).paginate(page: params[:page], per_page: 6)
   end
 
   private

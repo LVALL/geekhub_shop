@@ -1,8 +1,8 @@
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  has_many :order_items
-  has_many :orders
+  has_many :order_items, dependent: :destroy
+  has_many :orders, dependent: :destroy
 
   validates :email, presence: true
   validates :email, uniqueness: true
