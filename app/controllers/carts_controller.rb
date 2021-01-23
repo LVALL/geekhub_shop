@@ -8,6 +8,7 @@ class CartsController < ApplicationController
   def update
     update_order_items_quantities
     current_order.update(total_price: params[:total_price].to_f, status: 'ordered')
+    OrderMailer.complete_order_email(current_user).deliver_now
   end
 
   def profile
