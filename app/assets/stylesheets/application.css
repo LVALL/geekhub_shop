@@ -48,3 +48,75 @@ html,body{
     left: 0;
     right: 0;
 }
+
+.comment-text-area{
+    min-height: 100px;
+    max-height: 314px;
+}
+
+.raiting {
+    margin-top: 10px;
+    float: left;
+}
+.raiting::before, .raiting::after {
+    content: '';
+    display: table;
+}
+.raiting::after {
+    clear: both;
+}
+.raiting__check {
+    display: none;
+}
+.raiting__check:checked ~ .raiting__star {
+    color: #f29625;
+}
+.raiting__star {
+    position: relative;
+    display: block;
+    float: right;
+    height: 0;
+    width: 0;
+    border-right: 10px solid transparent;
+    border-bottom: 7px solid;
+    border-left: 10px solid transparent;
+    margin-right: 5px;
+    font-size: 0;
+    line-height: 0;
+    color: #e1e1e1;
+    -webkit-transform: rotate(35deg);
+    transform: rotate(35deg);
+    cursor: pointer;
+}
+.raiting__star::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -6px;
+    height: 0;
+    width: 0;
+    border-bottom: 8px solid;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    -webkit-transform: rotate(-35deg);
+    transform: rotate(-35deg);
+}
+.raiting__star::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -10px;
+    width: 0;
+    height: 0;
+    border-right: 10px solid transparent;
+    border-bottom: 7px solid;
+    border-left: 10px solid transparent;
+    -webkit-transform: rotate(-70deg);
+    transform: rotate(-70deg);
+}
+.raiting__star:hover {
+    color: #f29625;
+}
+.raiting__star:hover ~ .raiting__star {
+    color: #f29625;
+}

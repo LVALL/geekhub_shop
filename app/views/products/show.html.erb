@@ -24,15 +24,10 @@
         <div class="col-lg-7 py-5">
           <div class="card shadow">
             <div class="row">
-              <div class="col-12 my-3 pl-5">
+              <div class="rating-stars col-12 my-3 pl-5">
                 <h6>Rate product:</h6>
-                <i class="fas fa-star" id="1"></i>
-                <i class="fas fa-star" id="2"></i>
-                <i class="fas fa-star" id="3"></i>
-                <i class="fas fa-star" id="4"></i>
-                <i class="fas fa-star" id="5"></i>
+                <%= render 'comments/stars_raiting' %>
               </div>
-
               <div class="col-12 pl-5 mb-3 pr-5">
                 <%= render 'comments/comment_form', product_id: @product.id if current_user.present? %>
               </div>
@@ -61,6 +56,5 @@
 
       </div>
     </div>
-
   </div>
 </div>
