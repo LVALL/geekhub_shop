@@ -3,6 +3,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :order_items, dependent: :destroy
   has_many :orders, dependent: :destroy
+  has_many :comments
 
   validates :email, presence: true
   validates :email, uniqueness: true

@@ -6,6 +6,8 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    @comment = @product.comments.build
+    @comments = @product.comments.where.not(id: nil)
   end
 
   def complete

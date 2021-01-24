@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   end
 
   resources :products, only: %i[index show] do
+    resources :comments, only: %i[create update destroy]
     resources :order_items, only: %i[create update destroy]
     get :search, on: :collection
   end

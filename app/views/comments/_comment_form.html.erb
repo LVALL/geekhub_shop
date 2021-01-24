@@ -1,0 +1,16 @@
+<%= form_with model: [ @product, @comment ] do |form| %>
+
+  <%= form.hidden_field :product_id, class: "form-control" %>
+
+  <div class="field form_field">
+    <%= form.text_area :body, class: "form-control" %>
+  </div>
+
+  <div class="field form_field">
+    <%= form.hidden_field :rating, class: "form-control" %>
+  </div>
+
+  <div class="actions mt-3">
+    <%= form.submit "Comment", class: 'submit_form btn btn-outline-info text-dark d-inline-block float-right' %>
+  </div>
+<% end %>
