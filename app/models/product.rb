@@ -11,8 +11,8 @@ class Product < ApplicationRecord
   end
 
   def average_rating
-    return 0 if comments.empty?
+    return 0.0 if comments.persisted.empty?
 
-    comments.sum(&:rating).to_f / comments.count
+    comments.persisted.sum(&:rating).to_f / comments.count
   end
 end

@@ -13,6 +13,16 @@ class CommentsController < ApplicationController
     redirect_to product_path(@product)
   end
 
+  def update
+    @comment = Comment.find(params[:id])
+    if @comment.update(comment_params)
+      flash[:success] = 'Comment successfully updated!'
+    else
+      flash[:danger] = 'Something wrong, sorry!'
+    end
+    redirect_to product_path(@product)
+  end
+
   def destroy
     @comment = Comment.find params[:id]
     @comment.destroy
