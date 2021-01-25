@@ -9,4 +9,10 @@ class Product < ApplicationRecord
   def to_param
     "#{id}-#{name}".parameterize
   end
+
+  def average_rating
+    return 0 if comments.empty?
+
+    comments.sum(&:rating).to_f / comments.count
+  end
 end

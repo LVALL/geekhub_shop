@@ -13,7 +13,7 @@
             <%= image_tag(@product.image_url, class: "card-img-top") %>
             <div class="card-body">
               <h4 class="card-title">
-                <%= @product.name %>
+                <%= @product.name %> ( <%= @product.average_rating  %> <i class="fas fa-star" style="color: #ffde00"></i>)
               </h4>
               <h5>$<%= @product.price %></h5>
               <p class="card-text text-justify"><%= @product.description %></p>
@@ -22,37 +22,22 @@
         </div>
 
         <div class="col-lg-7 py-5">
-          <div class="card shadow">
-            <div class="row">
-              <div class="rating-stars col-12 my-3 pl-5">
-                <h6>Rate product:</h6>
-                <%= render 'comments/stars_raiting' %>
-              </div>
-              <div class="col-12 pl-5 mb-3 pr-5">
-                <%= render 'comments/comment_form', product_id: @product.id if current_user.present? %>
+          <% if current_user.present? && allowed_to_comment(@product) %>
+            <div class="card shadow">
+              <div class="row">
+                <div class="rating-stars col-12 my-3 pl-5">
+                  <h6>Rate product:</h6>
+                  <%= render 'comments/stars_raiting' %>
+                </div>
+                <div class="col-12 pl-5 mb-3 pr-5">
+                  <%= render 'comments/comment_form', product_id: @product.id %>
+                </div>
               </div>
             </div>
-          </div>
+          <% end %>
         </div>
 
-        <% @comments.each do |comment| %>
-          <div class="col-lg-10">
-            <div class="card shadow mb-5">
-              <div class="card-header">Header</div>
-              <div class="card-body">
-                <h5 class="card-title"><%= comment.rating %></h5>
-                <p class="card-text"><%= comment.body %></p>
-              </div>
-              <% if comment_author?(current_user, comment) %>
-                <div class="row">
-                  <div class="col-12 text-right py-3">
-                    <%= link_to 'Delete', product_comment_path(@product, comment), method: :delete, class: "btn btn-danger text-white mr-3" %>
-                  </div>
-                </div>
-              <% end %>
-            </div>
-          </div>
-        <% end %>
+        <%= render 'comments/comment' %>
 
       </div>
     </div>

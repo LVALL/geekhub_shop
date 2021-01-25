@@ -21,13 +21,6 @@ body {
     background: #f7fdff;
 }
 
-/*body {*/
-/*    background: #eecda3;*/
-/*    background: -webkit-linear-gradient(to right, #eecda3, #ef629f);*/
-/*    background: linear-gradient(to right, #eecda3, #ef629f);*/
-/*    min-height: 100vh;*/
-/*}*/
-
 html{
     position:relative;
     min-height: 100%;
@@ -69,7 +62,7 @@ html,body{
     display: none;
 }
 .raiting__check:checked ~ .raiting__star {
-    color: #f29625;
+    color: #ffde00;
 }
 .raiting__star {
     position: relative;
@@ -115,8 +108,8 @@ html,body{
     transform: rotate(-70deg);
 }
 .raiting__star:hover {
-    color: #f29625;
+    color: #ffde00;
 }
 .raiting__star:hover ~ .raiting__star {
-    color: #f29625;
+    color: #ffde00;
 }
