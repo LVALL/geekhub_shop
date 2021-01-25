@@ -47,24 +47,24 @@ html,body{
     max-height: 314px;
 }
 
-.raiting {
+.rating {
     margin-top: 10px;
     float: left;
 }
-.raiting::before, .raiting::after {
+.rating::before, .rating::after {
     content: '';
     display: table;
 }
-.raiting::after {
+.rating::after {
     clear: both;
 }
-.raiting__check {
+.rating__check {
     display: none;
 }
-.raiting__check:checked ~ .raiting__star {
+.rating__check:checked ~ .rating__star {
     color: #ffde00;
 }
-.raiting__star {
+.rating__star {
     position: relative;
     display: block;
     float: right;
@@ -81,7 +81,7 @@ html,body{
     transform: rotate(35deg);
     cursor: pointer;
 }
-.raiting__star::before {
+.rating__star::before {
     content: '';
     position: absolute;
     top: -5px;
@@ -94,7 +94,7 @@ html,body{
     -webkit-transform: rotate(-35deg);
     transform: rotate(-35deg);
 }
-.raiting__star::after {
+.rating__star::after {
     content: '';
     position: absolute;
     top: 0;
@@ -107,9 +107,9 @@ html,body{
     -webkit-transform: rotate(-70deg);
     transform: rotate(-70deg);
 }
-.raiting__star:hover {
+.rating__star:hover {
     color: #ffde00;
 }
-.raiting__star:hover ~ .raiting__star {
+.rating__star:hover ~ .rating__star {
     color: #ffde00;
 }
