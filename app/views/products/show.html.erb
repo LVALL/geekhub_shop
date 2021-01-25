@@ -43,6 +43,7 @@
               <div class="card-header">
                 <h6><%= comment.user.name %></h6>
               </div>
+
               <div class="card-body">
                 <% comment.rating.times do %>
                   <i class="fas fa-star" style="color: #ffde00"></i>
@@ -52,16 +53,24 @@
                 <% end %>
                 <p class="card-text mt-3"><%= comment.body %></p>
               </div>
+
               <% if comment_author?(current_user, comment) %>
                 <div class="row">
-                  <div class="col-12 text-right py-3">
-                    <%= link_to 'Delete', product_comment_path(@product, comment), method: :delete, class: "btn btn-danger text-white mr-3" %>
+                  <div class="toggle-edit-btn col-12 text-right pl-5 mb-3 pr-5">
+                    <a class="text-dark" style="font-size: 1.5em; cursor: pointer">
+                      <i class="far fa-edit"></i>
+                    </a>
+                    <%= link_to(product_comment_path(@product, comment),
+                                method: :delete, class: "text-dark ml-3", style: "font-size: 1.5em") do %>
+                      <i class="far fa-trash-alt"></i>
+                    <% end %>
                   </div>
-                  <div class="col-12 text-right py-3">
+                  <div class="update-comment-form col-12 text-right pl-5 mb-3 pr-5">
                     <%= render 'comments/comment_form', comment: comment %>
                   </div>
                 </div>
               <% end %>
+
             </div>
           </div>
         <% end %>
