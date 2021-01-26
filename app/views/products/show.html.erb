@@ -10,7 +10,7 @@
       <div class="row">
         <div class="col-12 mb-4">
           <div class="card h-100">
-            <%= image_tag(@product.image_url, class: "card-img-top") %>
+            <%= image_tag(@product.image_url, class: "card-img-top lightbox-show") %>
             <div class="card-body">
               <h4 class="card-title">
                 <%= @product.name %> ( <%= @product.average_rating  %> <i class="fas fa-star" style="color: #ffde00"></i>)
@@ -78,4 +78,5 @@
       </div>
     </div>
   </div>
+  <%= render 'products/lightbox' %>
 </div>

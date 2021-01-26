@@ -1,6 +1,6 @@
 document.addEventListener('turbolinks:load', function () {
     if (window.location.pathname.includes("products")) {
-        $('.update-comment-form').hide();
+        $('.update-comment-form, #lightbox-button').hide();
 
         $('.rating').each(function () {
             $(this).children('.rating__check').bind( "click", function() {
@@ -10,6 +10,10 @@ document.addEventListener('turbolinks:load', function () {
 
         $('.toggle-edit-btn').click(function() {
             $('.update-comment-form').toggle(500);
+        });
+
+        $('.lightbox-show').click(function() {
+            document.getElementById("lightbox-button").click();
         });
     }
 });
