@@ -3,7 +3,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:github]
   has_many :order_items, dependent: :destroy
   has_many :orders, dependent: :destroy
-  has_many :comments
+  has_many :comments, dependent: :destroy
 
   validates :email, presence: true
   validates :name, presence: true
