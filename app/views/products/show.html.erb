@@ -56,8 +56,8 @@
 
               <% if comment_author?(current_user, comment) %>
                 <div class="row">
-                  <div class="toggle-edit-btn col-12 text-right pl-5 mb-3 pr-5">
-                    <a class="text-dark" style="font-size: 1.5em; cursor: pointer">
+                  <div class="col-12 text-right pl-5 mb-3 pr-5">
+                    <a class="toggle-edit-btn text-dark" style="font-size: 1.5em; cursor: pointer">
                       <i class="far fa-edit"></i>
                     </a>
                     <%= link_to(product_comment_path(@product, comment),
