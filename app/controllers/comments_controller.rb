@@ -5,28 +5,18 @@ class CommentsController < ApplicationController
   def create
     @comment = @product.comments.create(comment_params.merge(user_id: current_user.id))
 
-    if @comment.save
-      flash[:success] = 'Comment successfully added!'
-    else
-      flash[:danger] = 'Something wrong, sorry!'
-    end
-    redirect_to product_path(@product)
+    redirect_to product_path(@product) if @comment.save
   end
 
   def update
     @comment = Comment.find(params[:id])
-    if @comment.update(comment_params)
-      flash[:success] = 'Comment successfully updated!'
-    else
-      flash[:danger] = 'Something wrong, sorry!'
-    end
-    redirect_to product_path(@product)
+
+    redirect_to product_path(@product) if @comment.update(comment_params)
   end
 
   def destroy
     @comment = Comment.find params[:id]
     @comment.destroy
-    flash[:danger] = 'Comment deleted!'
     redirect_to product_path(@product)
   end
 
