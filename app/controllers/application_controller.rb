@@ -1,7 +1,6 @@
 class ApplicationController < ActionController::Base
   helper_method :current_order
   before_action :configure_permitted_parameters, if: :devise_controller?
-  protect_from_forgery with: :null_session
 
   def authenticate_active_admin_user!
     authenticate_user!
